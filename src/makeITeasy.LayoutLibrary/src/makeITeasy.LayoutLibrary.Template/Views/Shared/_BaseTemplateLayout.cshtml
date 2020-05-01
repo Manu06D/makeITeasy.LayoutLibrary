@@ -1,0 +1,23 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@inject makeITeasy.LayoutLibrary.Template.Models.PageDefinition pageDefinition
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/_content/makeITeasy.LayoutLibrary.Template/css/bundle.min.css" />
+    <title>@pageDefinition?.Title</title>
+</head>
+<body>
+    <img src="/_content/makeITeasy.LayoutLibrary.Template/images/logo.png" />
+    Best Template in da World
+    @RenderBody()
+
+    <partial name="_BaseTemplateFooter" />
+
+    <script src="/_content/makeITeasy.LayoutLibrary.Template/js/bundle.min.js"></script>
+    <script>
+        console.log("hello from base layout");
+    </script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
